@@ -38,10 +38,9 @@ bot = Client(
 @bot.on_message(filters.command(["start"]))
 async def start(bot: Client, m: Message):
     editable = await m.reply_text(
-       f" "You are currently using the free version. 🆓\n\n"
-            "I'm here to make your life easier by downloading videos from your **.txt** file 📄 and uploading them directly to Telegram!\n\n"
-            "Want to get started? \n\n💬 Contact @ilaps to Get The Subscription 🎫 and unlock the full potential of your new bot! 🔓"
-        )
+       f" You are currently using the free version. 🆓\n\n"
+    "I'm here to make your life easier by downloading videos from your **.txt** file 📄 and uploading them directly to Telegram!\n\n"
+    "Want to get started? \n\n💬 Contact @ilaps to Get The Subscription 🎫 and unlock the full potential of your new bot! 🔓")
     
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
