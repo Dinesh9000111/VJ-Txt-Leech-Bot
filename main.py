@@ -48,7 +48,7 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["/moon"]))
+@bot.on_message(filters.command(["moon"]))
 async def upload(bot: Client, m: Message):
     editable = await m.reply_text('𝕤ᴇɴᴅ ᴛxᴛ ғɪʟᴇ  **')
     input: Message = await bot.listen(editable.chat.id)
