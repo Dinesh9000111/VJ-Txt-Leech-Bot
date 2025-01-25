@@ -48,9 +48,9 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["txt"]))
+@bot.on_message(filters.command(["/moon"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('𝕤ᴇɴᴅ ᴛxᴛ ғɪʟᴇ ⚡️.**\n\nDeveloper** : ilaps **')
+    editable = await m.reply_text('𝕤ᴇɴᴅ ᴛxᴛ ғɪʟᴇ  **')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -215,7 +215,8 @@ async def upload(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"** f"**🚧 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 🚧**"\n\n**📝Name »** `{name}\n\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
+              Show = f"**🚧 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 🚧**\n\n**🎬Name »** `{name}\n\nQuality » {raw_text2} "
+                    f"╰────⌈**✨ ilaps (@ilapss) ✨**⌋────╯"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
