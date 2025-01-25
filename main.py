@@ -191,15 +191,12 @@ async def upload(bot: Client, m: Message):
                 
                 if "drive" in url:
                     try:
-                        ka = await helper.download(url, name)
-                        copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        count+=1
-                        os.remove(ka)
-                        time.sleep(1)
-                    except FloodWait as e:
-                        await m.reply_text(str(e))
-                        time.sleep(e.x)
-                        continue
+                    ka = await helper.download(url, name)
+                    copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1)
+                    count += 1
+                    os.remove(ka)
+                    time.sleep(1)
+                   except FloodWait as e:
                 
                 elif ".pdf" in url:
                     try:
