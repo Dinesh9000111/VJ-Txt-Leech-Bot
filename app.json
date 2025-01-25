@@ -1,0 +1,49 @@
+{
+    "name": "Dinc",
+    "description": "Bot For Telegram",
+    "logo": "https://graph.org/file/818aa312b35052a5c4d74.jpg",
+    "keywords": [
+        "text-video",
+        "video-extract",
+        "pyrogram"
+    ],
+    "repository": "https://github.com/Dinesh9000111/bot",
+    "success_url": "https://t.me/ilaps",
+    "stack": "container",
+    "env": {
+        "API_ID": {
+            "description": "Enter Your Api Id",
+            "value": "27857159",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Enter Your Api Hash",
+            "value": "ae0e6d2a00c332b88bfef957f7630a58",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Enter Your Telegram Bot Token",
+            "value": "7550109221:AAFFs0LP0igzuPGqRJ7LcQ8UpJ4CYcRB9o8",
+            "required": true
+        },
+        "BOT_NAME": {
+            "description": "Enter Your Telegram Bot Name",
+            "value": "dincupoladerbot",
+            "required": true
+        },
+        "MONGO_URI": {
+            "description": "Enter your MongoDB connection string",
+            "value": "",
+            "required": true
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+    ]
+}
