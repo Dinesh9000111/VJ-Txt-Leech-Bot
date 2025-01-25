@@ -186,7 +186,7 @@ async def upload(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try: 
-               cc = f'**   🎥 VIDEO ID: {str(count).zfill(3)}**\n\n**📄 Title** : {name1}\n\n**🔖 Batch** : {raw_text0}\n\n**📥 Downloaded by : @ilapss **'
+               cc = f'**[🎥] VIDEO ID: {str(count).zfill(3)}**\n\n**📄 Title** : {name1}\n\n**🔖 Batch** : {raw_text0}\n\n**📥 Downloaded by : @ilapss **'
                cc1 = f'**[📁] File_ID: {str(count).zfill(3)}**\n\n**𝑭𝒊𝒍𝒆 𝑵𝒂𝒎𝒆** : {name1}\n\n**🔖 Batch** : {raw_text0}\n\n**📥 Downloaded by : @ilapss  **'                    
                 if "drive" in url:
                     try:
