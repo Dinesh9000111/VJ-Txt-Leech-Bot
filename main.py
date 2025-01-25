@@ -189,7 +189,7 @@ async def upload(bot: Client, m: Message):
             try:  
                 
                 cc = f'**[🎥] VIDEO ID: {str(count).zfill(3)}**\n\n**📄 Title** : {name1}\n\n**🔖 Batch** : {raw_text0}\n\n**📥 Downloaded by : @ilapss **'
-                cc1 = f'**[📁] File_ID: {str(count).zfill(3)}**\n\n**𝑭𝒊𝒍𝒆 𝑵𝒂𝒎𝒆** : {name1}\n\n**🔖 Batch** : {raw_text0}\n\n**📥 Downloaded by : @ilapss **'
+                cc1 = f'**[📁] File_ID: {str(count).zfill(3)}**\n\n**📄 Title** : {name1}\n\n**🔖 Batch** : {raw_text0}\n\n**📥 Downloaded by : @ilapss **'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -204,18 +204,18 @@ async def upload(bot: Client, m: Message):
                 
                 elif ".pdf" in url:
                     try:
-                        cmd = f'yt-dlp -o " @SONICKUWALSSCBOT {name}.pdf" "{url}"'
+                        cmd = f'yt-dlp -o " @ilapss {name}.pdf" "{url}"'
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
-                        copy = await bot.send_document(chat_id=m.chat.id, document=f' @SONICKUWALSSCBOT {name}.pdf', caption=cc1)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=f' @ilapss {name}.pdf', caption=cc1)
                         count += 1
-                        os.remove(f' @SONICKUWALSSCBOT {name}.pdf')
+                        os.remove(f' @ilapss {name}.pdf')
                     except FloodWait as e:
                         await m.reply_text(str(e))
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
+                    Show = f"** f"**🚧 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 🚧**"\n\n**📝Name »** `{name}\n\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
