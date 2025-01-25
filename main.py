@@ -195,11 +195,8 @@ async def upload(bot: Client, m: Message):
                 
                 cc = f'⋅ ─  **{t_name}**  ─ ⋅\n\n[🎬] **Video_ID** : {str(count).zfill(3)}\n**𝑽𝒊𝒅𝒆𝒐 𝑵𝒂𝒎𝒆** : {v_name}\n**𝑩𝒂𝒕𝒄𝒉 𝑵𝒂𝒎𝒆**: {b_name}\n\n**𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅𝒆𝒅 𝑩𝒚 : {CR}**'
                 cc1 = f'⋅ ─  **{t_name}**  ─ ⋅\n\n[📁] **File ID** : {str(count).zfill(3)}\n**𝑭𝒊𝒍𝒆 𝑵𝒂𝒎𝒆** : {v_name}\n**𝑩𝒂𝒕𝒄𝒉 𝑵𝒂𝒎𝒆** : {b_name}`n\n**𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅𝒆𝒅 𝑩𝒚 : {CR}**'
-
-            else:
-                cc = f'**[📹] Video_ID : {str(count).zfill(3)}**\n\n**𝑽𝒊𝒅𝒆𝒐 𝑵𝒂𝒎𝒆** : {name1}\n**𝑩𝒂𝒕𝒄𝒉 𝑵𝒂𝒎𝒆** : {b_name}\n\n**𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅𝒆𝒅 𝑩𝒚 : {CR}**'
-                cc1 = f'**[📁] File_ID : {str(count).zfill(3)}**\n\n**𝑭𝒊𝒍𝒆 𝑵𝒂𝒎𝒆** : {name1}\n**𝑩𝒂𝒕𝒄𝒉 𝑵𝒂𝒎𝒆** : {b_name}\n\n**𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅𝒆𝒅 𝑩𝒚 : {CR}**'                             
-                 if "drive" in url:try:
+                if "drive" in url:
+                    try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
                         count+=1
