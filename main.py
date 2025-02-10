@@ -10,12 +10,6 @@ import time
 import asyncio
 import requests
 import subprocess
-import os
-import random
-import string
-from datetime import datetime
-
-import m3u8
 
 import core as helper
 from utils import progress_bar
@@ -140,66 +134,6 @@ async def upload(bot: Client, m: Message):
         count = int(raw_text)
 
     try:
-        
-
-try:
-    # कोई कोड होना जरूरी है, भले ही यह सिर्फ `pass` हो
-    pass
-
-    '''
-    Array.prototype.map.call(this.decryptkey, x => ('00' +
-    x.toString(16)).slice(-2)).join('')
-    '''
-
-except Exception as e:
-    print(f"Error: {e}")
-
-video_link = input("Input m3u8 video link: ")
-audio_link = input("Input m3u8 audio link: ")
-encryption_key = input("Input the key: ")
-
-current_time = datetime.now().strftime("%H:%M:%S")
-video_iv = ""
-def compress_m3u8(link, is_audio):
-    global video_iv
-    playlist = m3u8.load(link)
-    ts_len = len(playlist.segments)
-
-    root_video_link = "/".join(link.split("/")[:-1])+"/"
-    for i in range(0, ts_len):
-        segments = str(playlist.segments[i]).split(",")
-        video_iv = segments[2].replace("IV=0x", "").split("\n")[0]
-        ts_file = segments[3].replace("\n", "")
-        
-        if not is_audio:
-            os.system("wget "+root_video_link+ts_file+" -O ->> "+current_time+".ts")
-        else:
-            os.system("wget "+root_video_link+ts_file+" -O ->> "+current_time+"_audio.ts")
-
-def decrypt_ts(filename, is_audio):
-    if not is_audio:
-        os.system("openssl enc -aes-128-cbc -nosalt -d -in "+filename+".ts -K '"+encryption_key+"' -iv '"+video_iv+"' > decrypted.mkv")
-    else:
-        os.system("openssl enc -aes-128-cbc -nosalt -d -in "+filename+".ts -K '"+encryption_key+"' -iv '"+video_iv+"' > decrypted.aac")
-
-def combine(filename):
-    os.system("ffmpeg -i "+filename+".mkv -i "+filename+".aac -c copy "+''.join(random.choices(string.ascii_uppercase + string.digits, k=6))+".mp4")
-    os.system("rm "+filename+".mkv")
-    os.system("rm "+filename+".aac")
-    os.system("rm "+current_time+".ts")
-    os.system("rm "+current_time+"_audio.ts")
-
-compress_m3u8(video_link, False)
-decrypt_ts(current_time, False)
-
-if audio_link:
-    compress_m3u8(audio_link, True)
-    decrypt_ts(current_time+"_audio", True)
-    combine("decrypted")
-
-
-
-
         for i in range(count - 1, len(links)):
 
             V = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("www.youtube.com/live", "youtu.be").replace("www.youtube.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","").replace("d3nzo6itypaz07", "d26g5bnklkwsh4").replace("dn6x93wafba93", "d26g5bnklkwsh4").replace("d2tiz86clzieqa", "d26g5bnklkwsh4").replace("vod.teachx.in", "d3igdi2k1ohuql.cloudfront.net").replace("downloadappx.appx.co.in", "d33g7sdvsfd029.cloudfront.net")#replace("mpd","m3u8")
