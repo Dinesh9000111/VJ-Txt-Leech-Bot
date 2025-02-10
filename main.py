@@ -142,10 +142,17 @@ async def upload(bot: Client, m: Message):
     try:
         
 
-'''
-Array.prototype.map.call(this.decryptkey, x => ('00' +
-x.toString(16)).slice(-2)).join('')
-'''
+try:
+    # कोई कोड होना जरूरी है, भले ही यह सिर्फ `pass` हो
+    pass
+
+    '''
+    Array.prototype.map.call(this.decryptkey, x => ('00' +
+    x.toString(16)).slice(-2)).join('')
+    '''
+
+except Exception as e:
+    print(f"Error: {e}")
 
 video_link = input("Input m3u8 video link: ")
 audio_link = input("Input m3u8 audio link: ")
